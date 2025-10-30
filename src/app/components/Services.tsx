@@ -1,6 +1,6 @@
 "use client"
 import React from "react";
-import { WashingMachine, Shirt, Truck, Sparkles, CheckCircle, Clock } from "lucide-react";
+import { WashingMachine, Shirt, Truck, Sparkles, CheckCircle, Clock, Leaf } from "lucide-react";
 
 interface Service {
   title: string;
@@ -11,18 +11,18 @@ interface Service {
 const ServicesSection: React.FC = () => {
   const services: Service[] = [
     {
-      title: "Professional Linen Washing",
-      description: "Deep cleaning with eco-friendly detergents that preserve fabric quality. Hotel-grade washing for sheets, pillowcases, duvet covers, and towels.",
+      title: "Επαγγελματικό πλύσιμο",
+      description: "Επιμελής καθαρισμός με οικολογικά απορρυπαντικά που διατηρούν την ποιότητα των υφασμάτων. Άρτιο αποτέλεσμα σε είδη ιματισμού (σεντόνια, μαξιλαροθήκες, παπλωματοθήκες & πετσέτες) καταλυμάτων βραχυχρόνιας μίσθωσης.",
       icon: WashingMachine,
     },
     {
-      title: "Expert Ironing & Folding",
-      description: "Crisp, wrinkle-free linens perfectly pressed and folded to hotel standards. Every piece looks pristine and ready for your guests.",
+      title: "Εξειδικευμένο πλύσιμο και δίπλωμα",
+      description: "Τέλεια διπλωμένα και σιδερωμένα στα πρότυπα ξενοδοχείου, έτοιμα για χρήση.",
       icon: Shirt,
     },
     {
-      title: "Convenient Pickup & Delivery",
-      description: "Same-day or next-day service available. We collect your linens and return them spotless, right to your door on schedule.",
+      title: "Παράδοση & Παραλαβή",
+      description: "Άμεση παραλαβή στα λευκά σας είδη και επιστροφή στο χώρο σας σε λίγες ώρες.",
       icon: Truck,
     },
   ];
@@ -67,37 +67,67 @@ const ServicesSection: React.FC = () => {
           ))}
         </div>
 
-        {/* Why Choose Us Section */}
-        <div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl p-10 md:p-16 text-white mb-20">
-          <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-3xl md:text-4xl font-bold mb-6">Why Hosts Love Ironone</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
-              <div className="flex flex-col items-center">
-                <div className="bg-white/20 rounded-full p-4 mb-4">
-                  <Clock className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-xl font-bold mb-2">24-48 Hour Turnaround</h4>
-                <p className="text-blue-100">Fast service that keeps pace with your bookings</p>
-              </div>
-              
-              <div className="flex flex-col items-center">
-                <div className="bg-white/20 rounded-full p-4 mb-4">
-                  <CheckCircle className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-xl font-bold mb-2">100% Quality Guarantee</h4>
-                <p className="text-blue-100">Every item inspected to hotel standards</p>
-              </div>
-              
-              <div className="flex flex-col items-center">
-                <div className="bg-white/20 rounded-full p-4 mb-4">
-                  <Sparkles className="w-8 h-8 text-white" />
-                </div>
-                <h4 className="text-xl font-bold mb-2">Eco-Friendly Products</h4>
-                <p className="text-blue-100">Safe for guests and the environment</p>
-              </div>
-            </div>
-          </div>
+            {/* Why Hosts Love Ironone Section */}
+<div className="bg-gradient-to-br from-blue-600 to-indigo-600 rounded-3xl p-10 md:p-16 text-white mb-20">
+  <div className="max-w-4xl mx-auto text-center">
+    <h3 className="text-3xl md:text-4xl font-bold mb-6">
+      Why Hosts Love Ironone – Γιατί μας προτιμούν οι οικοδεσπότες
+    </h3>
+
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+      {/* First column with checks */}
+      <div className="flex flex-col items-center">
+        <div className="bg-white/20 rounded-full p-4 mb-4">
+          <Sparkles className="w-8 h-8 text-white" />
         </div>
+        <h4 className="text-xl font-bold mb-4">Perfect Ironing – Σιδέρωμα</h4>
+        <ul className="text-blue-100 text-left space-y-2">
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-5 h-5 text-white mt-1" />
+            <span>Φρέσκα σεντόνια</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-5 h-5 text-white mt-1" />
+            <span>Λευκά είδη έτοιμα για χρήση</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-5 h-5 text-white mt-1" />
+            <span>Επαγγελματικό Πλύσιμο</span>
+          </li>
+          <li className="flex items-start gap-2">
+            <CheckCircle className="w-5 h-5 text-white mt-1" />
+            <span>Υπηρεσία υψηλής ποιότητας</span>
+          </li>
+        </ul>
+      </div>
+
+      {/* Second column */}
+      <div className="flex flex-col items-center">
+        <div className="bg-white/20 rounded-full p-4 mb-4">
+          <Clock className="w-8 h-8 text-white" />
+        </div>
+        <h4 className="text-xl font-bold mb-2">24-48 Hour Turnaround</h4>
+        <p className="text-blue-100 text-center">
+          Fast service that keeps pace with your bookings
+        </p>
+      </div>
+
+      {/* Third column */}
+      <div className="flex flex-col items-center">
+        <div className="bg-white/20 rounded-full p-4 mb-4">
+          <Leaf className="w-8 h-8 text-white" />
+        </div>
+        <h4 className="text-xl font-bold mb-2">Eco-Friendly Products</h4>
+        <p className="text-blue-100 text-center">
+          Safe for guests and the environment
+        </p>
+      </div>
+    </div>
+
+   
+  </div>
+</div>
+
 
         {/* Image Gallery Section */}
         <div className="mb-12">
@@ -214,18 +244,26 @@ const ServicesSection: React.FC = () => {
             </div>
           </div>
         </div>
+        {/* CTA Section - Book Now */}
+        <div className="text-center mt-16 bg-gray-50 py-12 rounded-3xl">
+          <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-6">
+            Κλείσε ραντεβού παραλαβής
+          </h3>
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto mb-8">
+            Είστε έτοιμοι για πεντακάθαρο ιματισμό και περισσότερο ελεύθερο χρόνο για την οργάνωση του καταλύματος σας;
+            Αφήστε σε εμάς να αναλάβουμε την φροντίδα των λευκών ειδών και εσείς επικεντρωθείτε στο να είστε ένας οικοδεσπότης 5 αστέρων.
+          </p>
 
-        {/* CTA Section */}
-        <div className="text-center mt-16">
-          <a 
+          <a
             href="/booking"
             className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
           >
-            <span>Book Your Service Today</span>
+            <span>Προγραμματίστε την πρώτη σας παραλαβή → Μάθε περισσότερα για τις υπηρεσίες μας</span>
             <Sparkles className="ml-2 w-5 h-5" />
           </a>
-          <p className="text-gray-600 mt-4">Join 500+ satisfied hosts</p>
         </div>
+                  
+       
       </div>
     </section>
   );

@@ -15,11 +15,10 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Services", href: "/services" },
-    { name: "Booking", href: "/booking" },
-    { name: "Contact", href: "/contact" },
+    { name: "Αρχική", href: "/" },
+    { name: "Σχετικά με μας", href: "/about" },
+    { name: "Υπηρεσίες", href: "/services" },
+    { name: "Επικοινωνία", href: "/contact" },
   ];
 
   return (

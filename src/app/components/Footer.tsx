@@ -58,7 +58,7 @@ const Footer = () => {
                 ironone
               </a>
               <p className="mt-6 text-gray-600 text-base leading-relaxed max-w-sm">
-                The premier wash & iron service for short-term rental hosts. We understand your needs because we've been in your shoes.
+                Η κορυφαία υπηρεσία πλυσίματος και σιδερώματος βραχυχρόνιας μίσθωσης. Γνωρίζουμε τις ανάγκες σας γιατί έχουμε βρεθεί στην θέση σας.
               </p>
               <div className="mt-8 flex gap-4">
                 <a 
@@ -78,56 +78,15 @@ const Footer = () => {
               </div>
             </div>
 
-            {/* Links Column */}
-            <div>
-              <h3 className="text-sm font-bold tracking-wider text-gray-900 uppercase mb-6">Quick Links</h3>
-              <ul className="space-y-4">
-                <li>
-                  <a href="/" className="text-gray-600 hover:text-blue-600 transition-colors duration-300 inline-flex items-center gap-2 group">
-                    <span className="h-1 w-1 rounded-full bg-purple-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a href="/services" className="text-gray-600 hover:text-blue-600 transition-colors duration-300 inline-flex items-center gap-2 group">
-                    <span className="h-1 w-1 rounded-full bg-purple-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    Services
-                  </a>
-                </li>
-                <li>
-                  <a href="/about" className="text-gray-600 hover:text-blue-600 transition-colors duration-300 inline-flex items-center gap-2 group">
-                    <span className="h-1 w-1 rounded-full bg-purple-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="/contact" className="text-gray-600 hover:text-blue-600 transition-colors duration-300 inline-flex items-center gap-2 group">
-                    <span className="h-1 w-1 rounded-full bg-purple-400 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
             {/* Contact Column */}
             <div>
-              <h3 className="text-sm font-bold tracking-wider text-gray-900 uppercase mb-6">Get In Touch</h3>
+              <h3 className="text-sm font-bold tracking-wider text-gray-900 uppercase mb-6">ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ</h3>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3 text-gray-600">
                   <Mail size={20} className="mt-0.5 flex-shrink-0" />
-                  <a href="mailto:hello@ironone.com" className="hover:text-blue-600 transition-colors">
-                    hello@ironone.com
+                  <a href="mailto:info@ironone.gr" className="hover:text-blue-600 transition-colors">
+                    info@ironone.gr
                   </a>
-                </li>
-                <li className="flex items-start gap-3 text-gray-600">
-                  <Phone size={20} className="mt-0.5 flex-shrink-0" />
-                  <a href="tel:+15551234567" className="hover:text-blue-600 transition-colors">
-                    +1 (555) 123-4567
-                  </a>
-                </li>
-                <li className="flex items-start gap-3 text-gray-600">
-                  <MapPin size={20} className="mt-0.5 flex-shrink-0" />
-                  <span>Serving Greater Metro Area</span>
                 </li>
               </ul>
             </div>

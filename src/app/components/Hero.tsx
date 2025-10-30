@@ -9,15 +9,15 @@ const HeroSection: React.FC = () => {
           {/* Left Content */}
           <div className="text-left">
             <div className="inline-block px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium mb-6 animate-pulse">
-              For Hosts, By Hosts
+              Από οικοδεσπότες σε οικοδεσπότες
             </div>
             
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Eliminate laundry from your hosting life
+              Απαλλαχτείτε από το πλύσιμο των ρούχων για το κατάλυμα σας
             </h1>
             
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              Professional washing and ironing services for short-term rental properties. Spotless, crisp linens ready for every guest.
+              Επαγγελματικές υπηρεσίες πλυσίματος και σιδερώματος για καταλύματα βραχυχρόνιας μίσθωσης. Υψηλή ποιότητα υπηρεσίας για λευκά είδη έτοιμα προς χρήση.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -25,28 +25,28 @@ const HeroSection: React.FC = () => {
                 href="/booking"
                 className="px-8 py-4 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition shadow-lg hover:shadow-xl transform hover:scale-105 text-center"
               >
-                Book Your First Pickup
+                Κλείσε την πρώτη σου παραλαβή
               </a>
               <a 
                 href="/services"
                 className="px-8 py-4 border-2 border-gray-300 text-gray-700 rounded-lg font-semibold hover:border-blue-600 hover:text-blue-600 transition text-center"
               >
-                See How It Works
+                Μάθε λεπτομέρειες
               </a>
             </div>
             
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 text-sm text-gray-600">
               <div className="flex items-center gap-2">
                 <Check className="text-green-500 flex-shrink-0" size={20} />
-                <span>24-48 hour turnaround</span>
+                <span>24-48 ώρες παράδοση</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="text-green-500 flex-shrink-0" size={20} />
-                <span>Hotel-quality finish</span>
+                <span>Άψογο αποτέλεσμα</span>
               </div>
               <div className="flex items-center gap-2">
                 <Check className="text-green-500 flex-shrink-0" size={20} />
-                <span>Eco-friendly products</span>
+                <span>Οικολογικά προϊόντα</span>
               </div>
             </div>
           </div>
