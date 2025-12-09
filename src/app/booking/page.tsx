@@ -128,8 +128,8 @@ export default function BookingCalendar() {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-4 md:p-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-3">Book Your Service</h1>
-          <p className="text-slate-600 text-lg">Professional linen washing and ironing for your Airbnb</p>
+          <h1 className="text-4xl md:text-5xl font-bold text-slate-800 mb-3">Κλείστε την Υπηρεσία σας</h1>
+          <p className="text-slate-600 text-lg">Προσωπικές υπηρεσίες πλύσιμο και σιδερώματος για το Airbnb σας</p>
         </div>
 
         <div className="flex justify-center items-center mb-8 space-x-2">
@@ -208,7 +208,7 @@ export default function BookingCalendar() {
                 onClick={() => setBookingStep(1)}
                 className="mb-4 text-blue-600 hover:text-blue-700 flex items-center"
               >
-                <ChevronLeft className="w-4 h-4" /> Back to calendar
+                <ChevronLeft className="w-4 h-4" /> Επιστροφή στον ημερολόγιο
               </button>
               
               <div className="mb-6">
@@ -216,7 +216,7 @@ export default function BookingCalendar() {
                   <Calendar className="w-5 h-5 mr-2" />
                   <span className="font-medium">{formatDate(selectedDate)}</span>
                 </div>
-                <h2 className="text-2xl font-bold text-slate-800">Select a Time</h2>
+                <h2 className="text-2xl font-bold text-slate-800">Επιλέξτε Ώρα</h2>
               </div>
 
               <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
@@ -240,11 +240,11 @@ export default function BookingCalendar() {
                 onClick={() => setBookingStep(2)}
                 className="mb-4 text-blue-600 hover:text-blue-700 flex items-center"
               >
-                <ChevronLeft className="w-4 h-4" /> Back to time selection
+                <ChevronLeft className="w-4 h-4" /> Επιστροφή στην επιλογή ώρας
               </button>
 
               <div className="mb-6">
-                <h2 className="text-2xl font-bold text-slate-800 mb-2">Your Information</h2>
+                <h2 className="text-2xl font-bold text-slate-800 mb-2">Πληροφορίες σας</h2>
                 <p className="text-slate-600">
                   {formatDate(selectedDate)} at {selectedTime}
                 </p>
@@ -254,7 +254,7 @@ export default function BookingCalendar() {
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
                     <User className="w-4 h-4 inline mr-2" />
-                    Full Name
+                    Όνομα
                   </label>
                   <input
                     type="text"
@@ -277,14 +277,14 @@ export default function BookingCalendar() {
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="john@example.com"
+                    placeholder="john@example.gr"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
                     <Phone className="w-4 h-4 inline mr-2" />
-                    Phone
+                    Τηλέφωνο
                   </label>
                   <input
                     type="tel"
@@ -292,14 +292,14 @@ export default function BookingCalendar() {
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="+1 (555) 000-0000"
+                    placeholder="+30 697 000 0000"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
                     <Home className="w-4 h-4 inline mr-2" />
-                    Property Address
+                    Διεύθυνση Ιδιοκτησίας
                   </label>
                   <input
                     type="text"
@@ -307,13 +307,13 @@ export default function BookingCalendar() {
                     value={formData.address}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="123 Main St, City, State"
+                      placeholder="123 Main St, City, Χώρα"
                   />
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Service Type
+                    Τύπος Υπηρεσίας
                   </label>
                   <select
                     name="service"
@@ -321,15 +321,15 @@ export default function BookingCalendar() {
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   >
-                    <option value="linen-wash">Linen Washing</option>
-                    <option value="ironing">Ironing Service</option>
-                    <option value="both">Washing & Ironing</option>
+                    <option value="linen-wash">Πλύσιμο Λευκών</option>
+                    <option value="ironing">Σιδερώματος Υπηρεσία</option>
+                    <option value="both">Πλύσιμο & Σιδερώματος</option>
                   </select>
                 </div>
 
                 <div>
                   <label className="block text-sm font-medium text-slate-700 mb-2">
-                    Additional Notes
+                    Πρόσθετα Σημειώσεις
                   </label>
                   <textarea
                     name="notes"
@@ -337,7 +337,7 @@ export default function BookingCalendar() {
                     onChange={handleInputChange}
                     rows={3}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Any special requests or details..."
+                    placeholder="Οποιεσδήποτε ειδικές αιτήσεις ή λεπτομέρειες..."
                   />
                 </div>
 
@@ -345,7 +345,7 @@ export default function BookingCalendar() {
                   onClick={handleSubmit}
                   className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-lg transition-colors"
                 >
-                  Confirm Booking
+                  Επιβεβαίωση Ραντεβού
                 </button>
               </div>
             </div>
@@ -356,16 +356,16 @@ export default function BookingCalendar() {
               <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
                 <Check className="w-10 h-10 text-green-600" />
               </div>
-              <h2 className="text-3xl font-bold text-slate-800 mb-4">Booking Confirmed!</h2>
+              <h2 className="text-3xl font-bold text-slate-800 mb-4">Ραντεβού Επιβεβαιώθηκε!</h2>
               <p className="text-slate-600 mb-6">
-                Thank you for choosing Ironone. We will send a confirmation email to <strong>{formData.email}</strong>
+                Ευχαριστούμε για την επιλογή της Ironone. Θα σας στείλουμε μια επιβεβαίωση email στο <strong>{formData.email}</strong>
               </p>
               <div className="bg-blue-50 rounded-lg p-6 mb-6 text-left max-w-md mx-auto">
-                <h3 className="font-semibold text-slate-800 mb-3">Booking Details:</h3>
-                <p className="text-slate-600 mb-2"><strong>Date:</strong> {formatDate(selectedDate)}</p>
-                <p className="text-slate-600 mb-2"><strong>Time:</strong> {selectedTime}</p>
-                <p className="text-slate-600 mb-2"><strong>Service:</strong> {formData.service.replace('-', ' ')}</p>
-                <p className="text-slate-600"><strong>Address:</strong> {formData.address}</p>
+                  <h3 className="font-semibold text-slate-800 mb-3">Λεπτομέρειες Ραντεβού:</h3>
+                <p className="text-slate-600 mb-2"><strong>Ημερομηνία:</strong> {formatDate(selectedDate)}</p>
+                <p className="text-slate-600 mb-2"><strong>Ώρα:</strong> {selectedTime}</p>
+                <p className="text-slate-600 mb-2"><strong>Υπηρεσία:</strong> {formData.service.replace('-', ' ')}</p>
+                <p className="text-slate-600"><strong>Διεύθυνση:</strong> {formData.address}</p>
               </div>
               <button
                 onClick={() => {
@@ -378,7 +378,7 @@ export default function BookingCalendar() {
                 }}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
               >
-                Make Another Booking
+                Κάνε Άλλο Ραντεβού
               </button>
             </div>
           )}

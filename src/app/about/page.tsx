@@ -9,13 +9,13 @@ const AboutPage = () => {
         <div className="container relative mx-auto px-6 text-center">
           <div className="inline-flex items-center rounded-full bg-brand-teal/10 px-4 py-2 mb-6">
             <Sparkles className="h-4 w-4 text-brand-teal mr-2" />
-            <p className="text-sm font-semibold text-brand-teal">Our Story</p>
+            <p className="text-sm font-semibold text-brand-teal">Η Ιστορία μας</p>
           </div>
           <h1 className="mt-2 text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl bg-clip-text text-transparent bg-gradient-to-r from-gray-900 via-brand-teal to-gray-900">
-            Founded by hosts,<br />for hosts.
+            Χτίστηκε από οικοδεσπότες,<br />για οικοδεσπότες.
           </h1>
           <p className="mt-8 max-w-2xl mx-auto text-xl leading-8 text-gray-600">
-            We know the endless cycle of laundry. We started Ironone to solve a problem we faced ourselves, giving hosts back their time and peace of mind.
+            Ξέρουμε το άπειρο κύκλο του πλυσίματος. Ξεκινήσαμε την Ironone για να λύσουμε ένα πρόβλημα που αντιμετώπισε εμείς εαυτούς, δίνοντας στους οικοδεσπότες το χρόνο και την ηρεμία τους.
           </p>
 
         </div>
@@ -41,7 +41,7 @@ const AboutPage = () => {
                   </div>
                   <div>
                     <p className="text-2xl font-bold text-gray-900">5★</p>
-                    <p className="text-xs text-gray-600">Guest Rating</p>
+                    <p className="text-xs text-gray-600">Αξιολογήσεις Επισκεπτών</p>
                   </div>
                 </div>
               </div>
@@ -50,28 +50,28 @@ const AboutPage = () => {
             {/* Right Column: Text Content */}
             <div className="order-1 lg:order-2">
               <div className="inline-flex items-center rounded-full bg-blue-100 px-3 py-1 mb-6">
-                <span className="text-xs font-semibold text-gray-600">THE IRONONE STORY</span>
+                <span className="text-xs font-semibold text-gray-600">Η ΙΣΤΟΡΙΑ ΤΗΣ IRONONE</span>
               </div>
               <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl leading-tight">
-                From Late-Night Washes to a Professional Service
+                Από Πλύσιμο Νυχτερινών Χρόνων σε Μια Επαγγελματική Υπηρεσία
               </h2>
               <p className="mt-6 text-lg leading-8 text-gray-600">
-                As short-term rental hosts, we were obsessed with providing a 5-star experience. But the one thing that constantly drained our time and energy was laundry. The pressure to have perfectly clean, crisp, and fresh linens for every single turnover was immense.
+                Ως οικοδεσπότες βραχυχρόνιας μίσθωσης, ήμαστε παραπλανημένοι από την παροχή μιας 5-αστερής εμπειρίας. Αλλά το ένα πράγμα που συνεχώς αφαιρούσε χρόνο και ενέργεια μας ήταν το πλύσιμο. Η πίεση για να έχουμε τέλεια καθαρά, ξηρά και φρέσκα είδη για κάθε μία μεταβίβαση ήταν τεράστια.
               </p>
               <p className="mt-4 text-lg leading-8 text-gray-600">
-                We realized there had to be a better way. We searched for a reliable, high-quality service tailored to the unique needs of hosts, but couldn't find one. So, we built it. Ironone was born from our own experience, with a process designed to be seamless, reliable, and deliver the hotel-quality results your guests deserve.
+                Ανακάλυψαμε ότι υπάρχει ένα καλύτερο τρόπο. Εξέτασαμε μια αξιόπιστη, υψηλής ποιότητας υπηρεσία που προσαρμόζεται στις ιδιαίτερες ανάγκες των οικοδεσπότων, αλλά δεν μπορούσαμε να την βρούμε. Έτσι, την χτίσαμε. Η Ironone γεννήθηκε από την εμπειρία μας, με ένα σχέδιο που σχεδιάστηκε για να είναι άμεσο, αξιόπιστο και να παράγει τα αποτελέσματα ποιότητας ξενοδοχείου που δικαιούστε οι επισκέπτες σας.
               </p>
               
               <div className="mt-8 grid grid-cols-2 gap-6">
                 <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-6">
                   <Clock className="h-8 w-8 text-brand-teal mb-3" />
                   <p className="text-2xl font-bold text-gray-900">24-48h</p>
-                  <p className="text-sm text-gray-600 mt-1">Turnaround Time</p>
+                  <p className="text-sm text-gray-600 mt-1">Χρονικό Διάστημα Παραλαβής</p>
                 </div>
                 <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-2xl p-6">
                   <Award className="h-8 w-8 text-purple-600 mb-3" />
                   <p className="text-2xl font-bold text-gray-900">Hotel</p>
-                  <p className="text-sm text-gray-600 mt-1">Grade Quality</p>
+                  <p className="text-sm text-gray-600 mt-1">Ποιότητα Ξενοδοχείου</p>
                 </div>
               </div>
             </div>
@@ -86,11 +86,11 @@ const AboutPage = () => {
           <div className="max-w-3xl mx-auto text-center mb-16">
             <div className="inline-flex items-center rounded-full bg-white/10 px-4 py-2 mb-6 backdrop-blur-sm">
               <Target className="h-4 w-4 text-gray-600 mr-2" />
-              <p className="text-3xl font-bold text-gray-600">Our Mission</p>
+              <p className="text-3xl font-bold text-gray-600">Η ΜΙΣΗ ΤΗΣ ΙRONONE</p>
             </div>
-            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Empowering Hosts, Every Day</h2>
+            <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">Ενεργοποίηση Οικοδεσπότων, Καθημερινά</h2>
             <p className="mt-6 text-xl leading-8 text-gray-600">
-              To empower short-term rental hosts by providing a flawless and reliable linen service, enabling them to deliver exceptional guest experiences, earn 5-star reviews, and reclaim their valuable time.
+              Να ενεργοποιήσουμε τους οικοδεσπότες βραχυχρόνιας μίσθωσης με την παροχή μιας άριστης και αξιόπιστης υπηρεσίας πλυσίματος, επιτρέποντας τους να παράγουν εξαιρετικές εμπειρίες επισκεπτών, να κερδίσουν αξιολογήσεις 5 αστερών και να αποκτήσουν το χρόνο τους πίσω.
             </p>
           </div>
 
@@ -100,9 +100,9 @@ const AboutPage = () => {
               <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/20 group-hover:scale-110 transition-transform duration-300">
                 <Target className="h-7 w-7 text-gray-600" />
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-gray-600">Uncompromising Quality</h3>
+                  <h3 className="mt-6 text-xl font-semibold text-gray-600">Άριστη Ποιότητα</h3>
               <p className="mt-3 text-base text-gray-600">
-                Every item is treated with care and inspected to meet hotel-grade standards. No shortcuts, no compromises.
+                Κάθε είδος αντιμετωπίζεται με προσοχή και ελέγχεται για να ικανοποιεί τις προδιαγραφές ποιότητας ξενοδοχείου. Χωρίς συμβάσεις, χωρίς παραβιάσεις.
               </p>
             </div>
 
@@ -110,9 +110,9 @@ const AboutPage = () => {
               <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/20 group-hover:scale-110 transition-transform duration-300">
                 <Heart className="h-7 w-7 text-gray-600" />
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-gray-600">Host-Centric Service</h3>
+              <h3 className="mt-6 text-xl font-semibold text-gray-600">Υπηρεσία Οικοδεσπότη</h3>
               <p className="mt-3 text-base text-gray-600">
-                We understand your challenges because we've lived them. Our service is designed to be your trusted partner.
+                Είμαστε πλήρως σε θέση να καταλάβουμε τις προκλήσεις σας επειδή έχουμε βρεθεί στην θέση σας. Η υπηρεσία μας σχεδιάστηκε για να είναι ο αξιόπιστος σας συνεργάτης.
               </p>
             </div>
 
@@ -120,9 +120,9 @@ const AboutPage = () => {
               <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-white/20 group-hover:scale-110 transition-transform duration-300">
                 <Zap className="h-7 w-7 text-gray-600" />
               </div>
-              <h3 className="mt-6 text-xl font-semibold text-gray-600">Absolute Reliability</h3>
+              <h3 className="mt-6 text-xl font-semibold text-gray-600">Απόλυτη Αξιόπιστη</h3>
               <p className="mt-3 text-base text-gray-600">
-                Fast, on-time turnarounds you can count on, so you're always ready for your next guest. Every single time.
+                Γρήγορη, σωστή παραλαβή και παράδοση, έτσι ώστε να είστε πάντα έτοιμοι για τον επόμενο επισκέπτη σας. Κάθε φορά.
               </p>
             </div>
 
@@ -135,10 +135,10 @@ const AboutPage = () => {
         <div className="container mx-auto px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Built on Trust & Excellence
+              Χτίστηκε σε Πίστη & Άριστο
             </h2>
             <p className="mt-4 text-lg text-gray-600">
-              Numbers that speak to our commitment
+              Αριθμοί που μιλούν για την συνειδητή μας συμμετοχή
             </p>
           </div>
           
@@ -148,7 +148,7 @@ const AboutPage = () => {
                 <Users className="h-8 w-8 text-blue-600" />
               </div>
               <p className="text-4xl font-bold text-gray-900">500+</p>
-              <p className="mt-2 text-sm text-gray-600">Happy Hosts</p>
+              <p className="mt-2 text-sm text-gray-600">Χαρούμενοι Οικοδεσπότες</p>
             </div>
 
             <div className="relative bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
@@ -156,7 +156,7 @@ const AboutPage = () => {
                 <Sparkles className="h-8 w-8 text-purple-600" />
               </div>
               <p className="text-4xl font-bold text-gray-900">10K+</p>
-              <p className="mt-2 text-sm text-gray-600">Turnovers Completed</p>
+              <p className="mt-2 text-sm text-gray-600">Μεταβιβάσεις Ολοκληρωμένες</p>
             </div>
 
             <div className="relative bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
@@ -164,7 +164,7 @@ const AboutPage = () => {
                 <Award className="h-8 w-8 text-green-600" />
               </div>
               <p className="text-4xl font-bold text-gray-900">98%</p>
-              <p className="mt-2 text-sm text-gray-600">Satisfaction Rate</p>
+              <p className="mt-2 text-sm text-gray-600">Ποσοστό Ικανοποίησης</p>
             </div>
 
             <div className="relative bg-white rounded-2xl shadow-lg p-8 text-center hover:shadow-xl transition-shadow">
@@ -172,7 +172,7 @@ const AboutPage = () => {
                 <Clock className="h-8 w-8 text-pink-600" />
               </div>
               <p className="text-4xl font-bold text-gray-900">24-48h</p>
-              <p className="mt-2 text-sm text-gray-600">Average Turnaround</p>
+              <p className="mt-2 text-sm text-gray-600">Μέσο Χρονικό Διάστημα Παραλαβής</p>
             </div>
           </div>
         </div>
@@ -182,23 +182,23 @@ const AboutPage = () => {
       <section className="bg-gray-900 py-24 sm:py-32">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
-            Ready to reclaim your time?
+              Ετοιμοί να αποκτήσετε το χρόνο σας πίσω?
           </h2>
           <p className="mt-6 text-lg leading-8 text-gray-300 max-w-2xl mx-auto">
-            Join hundreds of hosts who trust Ironone to deliver spotless linens, every time.
+            Γίνετε μέρος των εκατοντάδων οικοδεσπότων που εμπιστεύονται την Ironone για να παράγουν τέλεια καθαρά είδη, κάθε φορά.
           </p>
           <div className="mt-10 flex items-center justify-center gap-x-6">
             <a
               href="#"
               className="rounded-md bg-blue-600 px-6 py-3 text-base font-semibold text-white shadow-sm hover:bg-blue-500 transition-colors"
             >
-              Book Your First Pickup
+              Κλείστε την Πρώτη σας Παραλαβή
             </a>
             <a
               href="/services"
               className="text-sm font-semibold leading-6 text-white hover:text-gray-300 transition-colors"
             >
-              See how it works <span aria-hidden="true">→</span>
+              Δείτε πως λειτουργεί <span aria-hidden="true">→</span>
             </a>
           </div>
         </div>

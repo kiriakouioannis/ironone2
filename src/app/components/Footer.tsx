@@ -10,38 +10,38 @@ const Footer = () => {
         <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-20"></div>
         <div className="container relative mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-gray-900 sm:text-5xl leading-tight">
-            Ready for Spotless Linens<br />and More Free Time?
+            Ετοιμοί να αποκτήσετε το χρόνο σας πίσω?
           </h2>
           <p className="mt-6 text-xl text-gray-700 max-w-2xl mx-auto">
-            Let us handle the laundry. You focus on being a 5-star host.
+            Αφήστε σε εμάς να αναλάβουμε την φροντίδα των λευκών ειδών και εσείς επικεντρωθείτε στο να είστε ένας οικοδεσπότης 5 αστέρων.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/booking"
               className="group inline-flex items-center gap-2 rounded-full bg-blue-600 px-8 py-4 text-lg font-semibold text-white shadow-xl hover:bg-blue-700 transition-all duration-300 hover:scale-105"
             >
-              Schedule Your First Pickup
+              Κλείστε την Πρώτη σας Παραλαβή
               <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <a
               href="/services"
               className="text-lg font-semibold text-gray-700 hover:text-gray-900 transition-colors"
             >
-              Learn more about our service
+              Μάθετε περισσότερα για τις υπηρεσίες μας
             </a>
           </div>
           <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-gray-600 text-sm">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-green-500"></div>
-              <span>24-48 hour turnaround</span>
+              <span>24-48 ώρες υπηρεσία με διαθέσιμες επιλογές παραλαβής την ίδια ημέρα.</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-green-500"></div>
-              <span>Hotel-quality finish</span>
+              <span>Προσωπικές προδιαγραφές που θα παρατηρήσουν και θα εκτιμήσουν οι επισκέπτες σας.</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-green-500"></div>
-              <span>Same-day pickup available</span>
+              <span>Παράδοση σε 24-48 Ώρες</span>
             </div>
           </div>
         </div>
@@ -95,10 +95,10 @@ const Footer = () => {
           {/* Copyright Bar */}
           <div className="mt-16 border-t border-gray-200 pt-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-600">
-              <p>&copy; {currentYear} Ironone. All Rights Reserved.</p>
+              <p>&copy; {currentYear} Ironone. ΟΛΑ ΤΑ ΔΙΚΑΙΩΜΑΤΑ ΔΙΕΘΕΤΟΝΤΑΙ.</p>
               <div className="flex items-center gap-6">
-                <a href="/privacy" className="hover:text-blue-600 transition-colors">Privacy Policy</a>
-                <a href="/terms" className="hover:text-blue-600 transition-colors">Terms of Service</a>
+                <a href="/privacy" className="hover:text-blue-600 transition-colors">Πολιτική Απορρήτου</a>
+                <a href="/terms" className="hover:text-blue-600 transition-colors">Όροι Υπηρεσίας</a>
               </div>
             </div>
           </div>
@@ -109,3 +109,4 @@ const Footer = () => {
 };
 
 export default Footer;
+

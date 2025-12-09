@@ -11,26 +11,26 @@ const ServicesPage = () => {
         <div className="container relative mx-auto px-6 text-center">
           <div className="inline-flex items-center rounded-full bg-blue-100 px-4 py-2 mb-6">
             <Sparkles className="h-4 w-4 text-blue-600 mr-2" />
-            <p className="text-sm font-semibold text-blue-700">Our Services</p>
+            <p className="text-sm font-semibold text-blue-700">Οι Υπηρεσίες μας</p>
           </div>
           <h1 className="mt-2 text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl leading-tight">
-            Hotel-Quality Linens,<br />Simplified.
+            Λευκά είδη ποιότητας ξενοδοχείου,<br />απλοποιημένα.
           </h1>
           <p className="mt-8 max-w-2xl mx-auto text-xl leading-8 text-gray-600">
-            Choose the perfect plan for your property. We handle the rest, so you can focus on providing an amazing guest experience.
+            Επιλέξτε το ιδανικό πρόγραμμα για την ιδιοκτησία σας. Εμείς αναλαμβάνουμε τα υπόλοιπα, ώστε εσείς να μπορείτε να επικεντρωθείτε στην παροχή μιας εκπληκτικής εμπειρίας στους επισκέπτες σας.
           </p>
           <div className="mt-10 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-600">
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-green-500"></div>
-              <span>Free Pickup & Delivery</span>
+              <span>Δωρεάν Παραλαβή & Παράδοση</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-green-500"></div>
-              <span>24-48 Hour Turnaround</span>
+              <span>Παράδοση σε 24-48 Ώρες</span>
             </div>
             <div className="flex items-center gap-2">
               <div className="h-2 w-2 rounded-full bg-green-500"></div>
-              <span>Eco-Friendly Products</span>
+              <span>Οικολογικά Προϊόντα</span>
             </div>
           </div>
         </div>
@@ -40,8 +40,8 @@ const ServicesPage = () => {
       <section className="bg-white py-24 sm:py-32">
         <div className="container mx-auto px-6">
           <div className="mx-auto max-w-2xl text-center mb-16">
-             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Our Plans</h2>
-             <p className="mt-4 text-lg text-gray-600">Simple, transparent pricing designed for hosts.</p>
+             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Τα Προγράμματά μας</h2>
+             <p className="mt-4 text-lg text-gray-600">Απλή, διαφανής τιμολόγηση σχεδιασμένη για οικοδεσπότες.</p>
           </div>
           
           <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-start gap-8 lg:max-w-none lg:grid-cols-3">
@@ -52,50 +52,50 @@ const ServicesPage = () => {
                   <Sparkles className="h-6 w-6 text-white" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Wash & Iron</h3>
-              <p className="mt-3 text-base text-gray-600">Our complete, all-in-one solution for pristine linens every time.</p>
+              <h3 className="text-2xl font-bold text-gray-900">Πλύσιμο & Σιδέρωμα</h3>
+              <p className="mt-3 text-base text-gray-600">Η ολοκληρωμένη, all-in-one λύση μας για πεντακάθαρα λευκά είδη κάθε φορά.</p>
               <p className="mt-6 flex items-baseline gap-x-2">
                 <span className="text-5xl font-bold tracking-tight text-gray-900">€3.50</span>
-                <span className="text-lg font-semibold text-gray-600">/ kg</span>
+                <span className="text-lg font-semibold text-gray-600">/ κιλό</span>
               </p>
               <ul role="list" className="mt-8 space-y-4 text-base text-gray-700">
                 <li className="flex gap-x-3 items-start">
                   <CheckCircle className="h-6 w-6 flex-none text-blue-600 mt-0.5" />
-                  <span>Free Pickup & Delivery</span>
+                  <span>Δωρεάν Παραλαβή & Παράδοση</span>
                 </li>
                 <li className="flex gap-x-3 items-start">
                   <CheckCircle className="h-6 w-6 flex-none text-blue-600 mt-0.5" />
-                  <span>Professional Washing & Drying</span>
+                  <span>Επαγγελματικό Πλύσιμο & Στέγνωμα</span>
                 </li>
                 <li className="flex gap-x-3 items-start">
                   <CheckCircle className="h-6 w-6 flex-none text-blue-600 mt-0.5" />
-                  <span>Expert Ironing & Folding</span>
+                  <span>Εξειδικευμένο Σιδέρωμα & Δίπλωμα</span>
                 </li>
                 <li className="flex gap-x-3 items-start">
                   <CheckCircle className="h-6 w-6 flex-none text-blue-600 mt-0.5" />
-                  <span>Eco-Friendly Detergents</span>
+                  <span>Οικολογικά Απορρυπαντικά</span>
                 </li>
               </ul>
               <a 
                 href="/booking" 
                 className="mt-8 block rounded-xl bg-blue-600 px-6 py-3.5 text-center text-base font-semibold text-white shadow-md hover:bg-blue-700 transition-all duration-300 group-hover:scale-105"
               >
-                Choose Plan
+                Επιλέξτε Πρόγραμμα
               </a>
             </div>
 
             {/* Service Card 2: Iron Only (Most Popular) */}
             <div className="group relative flex flex-col rounded-3xl bg-gradient-to-br from-purple-50 to-pink-50 p-8 shadow-2xl ring-2 ring-purple-400 hover:ring-purple-500 transition-all duration-300 scale-105 hover:scale-110">
               <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-2 text-sm font-bold tracking-wide text-white shadow-lg">
-                MOST POPULAR
+                ΠΙΟ ΔΗΜΟΦΙΛΕΣ
               </div>
               <div className="flex items-center justify-between mb-4 mt-2">
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-r from-purple-600 to-pink-600">
                   <Crown className="h-6 w-6 text-white" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Iron Only</h3>
-              <p className="mt-3 text-base text-gray-600">You wash, we perfect. Get that crisp, hotel-quality finish.</p>
+              <h3 className="text-2xl font-bold text-gray-900">Μόνο Σιδέρωμα</h3>
+              <p className="mt-3 text-base text-gray-600">Εσείς πλένετε, εμείς τελειοποιούμε. Αποκτήστε αυτό το άψογο, ξενοδοχειακής ποιότητας φινίρισμα.</p>
               <p className="mt-6 flex items-baseline gap-x-2">
                 <span className="text-5xl font-bold tracking-tight text-gray-900">€2.00</span>
                 <span className="text-lg font-semibold text-gray-600">/ kg</span>
@@ -103,22 +103,22 @@ const ServicesPage = () => {
                <ul role="list" className="mt-8 space-y-4 text-base text-gray-700">
                 <li className="flex gap-x-3 items-start">
                   <CheckCircle className="h-6 w-6 flex-none text-purple-600 mt-0.5" />
-                  <span>Free Pickup & Delivery</span>
+                  <span>Δωρεάν Παραλαβή & Παράδοση</span>
                 </li>
                 <li className="flex gap-x-3 items-start">
                   <CheckCircle className="h-6 w-6 flex-none text-purple-600 mt-0.5" />
-                  <span>Professional Steam Ironing</span>
+                  <span>Επαγγελματικό Σιδέρωμα με Ατμό</span>
                 </li>
                 <li className="flex gap-x-3 items-start">
                   <CheckCircle className="h-6 w-6 flex-none text-purple-600 mt-0.5" />
-                  <span>Immaculate Folding & Packaging</span>
+                  <span>Άψογο Δίπλωμα & Συσκευασία</span>
                 </li>
               </ul>
               <a 
                 href="/booking" 
                 className="mt-8 block rounded-xl bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-3.5 text-center text-base font-semibold text-white shadow-md hover:from-purple-700 hover:to-pink-700 transition-all duration-300 group-hover:scale-105"
               >
-                Choose Plan
+                Επιλέξτε Πρόγραμμα
               </a>
             </div>
 
@@ -129,30 +129,30 @@ const ServicesPage = () => {
                   <Building2 className="h-6 w-6 text-white" />
                 </div>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900">Bulk & Commercial</h3>
-              <p className="mt-3 text-base text-gray-600">For boutique hotels or hosts managing multiple properties.</p>
+              <h3 className="text-2xl font-bold text-gray-900">Μαζικές & Επαγγελματικές Παραγγελίες</h3>
+              <p className="mt-3 text-base text-gray-600">Για boutique ξενοδοχεία ή οικοδεσπότες που διαχειρίζονται πολλαπλά ακίνητα.</p>
               <p className="mt-6 flex items-baseline gap-x-2">
-                <span className="text-5xl font-bold tracking-tight text-gray-900">Custom</span>
+                <span className="text-5xl font-bold tracking-tight text-gray-900">Προσαρμοσμένο</span>
               </p>
                <ul role="list" className="mt-8 space-y-4 text-base text-gray-700">
                 <li className="flex gap-x-3 items-start">
                   <CheckCircle className="h-6 w-6 flex-none text-gray-700 mt-0.5" />
-                  <span>Tailored Pricing & Schedules</span>
+                  <span>Εξατομικευμένη Τιμολόγηση & Προγράμματα</span>
                 </li>
                 <li className="flex gap-x-3 items-start">
                   <CheckCircle className="h-6 w-6 flex-none text-gray-700 mt-0.5" />
-                  <span>Dedicated Account Manager</span>
+                  <span>Αφιερωμένος Υπεύθυνος Λογαριασμού</span>
                 </li>
                 <li className="flex gap-x-3 items-start">
                   <CheckCircle className="h-6 w-6 flex-none text-gray-700 mt-0.5" />
-                  <span>All Features Included</span>
+                  <span>Όλες οι Λειτουργίες Περιλαμβάνονται</span>
                 </li>
               </ul>
               <a 
                 href="/contact" 
                 className="mt-8 block rounded-xl bg-gray-800 px-6 py-3.5 text-center text-base font-semibold text-white shadow-md hover:bg-gray-900 transition-all duration-300 group-hover:scale-105"
               >
-                Get a Quote
+                Λάβετε Προσφορά
               </a>
             </div>
           </div>
@@ -163,8 +163,8 @@ const ServicesPage = () => {
       <section className="bg-gradient-to-b from-gray-50 to-white py-24 sm:py-32">
         <div className="container mx-auto px-6">
           <div className="mx-auto max-w-2xl text-center mb-20">
-             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Our Simple 4-Step Process</h2>
-             <p className="mt-4 text-lg text-gray-600">Effortless for you, perfect for your guests.</p>
+             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Η Απλή Διαδικασία 4 Βημάτων μας</h2>
+             <p className="mt-4 text-lg text-gray-600">Αβίαστο για εσάς, τέλειο για τους επισκέπτες σας.</p>
           </div>
           
           <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
@@ -180,8 +180,8 @@ const ServicesPage = () => {
                     1
                   </div>
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-gray-900">Schedule Pickup</h3>
-                <p className="mt-2 text-base text-gray-600">Book a convenient time slot online through our easy calendar.</p>
+                <h3 className="mt-6 text-xl font-bold text-gray-900">Προγραμματίστε Παραλαβή</h3>
+                <p className="mt-2 text-base text-gray-600">Κλείστε ένα βολικό χρονικό διάστημα online μέσω του εύχρηστου ημερολογίου μας.</p>
               </div>
             </div>
 
@@ -197,8 +197,8 @@ const ServicesPage = () => {
                     2
                   </div>
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-gray-900">We Collect</h3>
-                <p className="mt-2 text-base text-gray-600">We arrive at your location to pick up your linens on time.</p>
+                <h3 className="mt-6 text-xl font-bold text-gray-900">Συλλέγουμε</h3>
+                <p className="mt-2 text-base text-gray-600">Ερχόμαστε στην τοποθεσία σας για να παραλάβουμε τα λευκά σας είδη στην ώρα τους.</p>
               </div>
             </div>
 
@@ -214,8 +214,8 @@ const ServicesPage = () => {
                     3
                   </div>
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-gray-900">We Perfect</h3>
-                <p className="mt-2 text-base text-gray-600">Our experts wash, iron, and fold to hotel-quality standards.</p>
+                <h3 className="mt-6 text-xl font-bold text-gray-900">Τελειοποιούμε</h3>
+                <p className="mt-2 text-base text-gray-600">Οι ειδικοί μας πλένουν, σιδερώνουν και διπλώνουν με πρότυπα ποιότητας ξενοδοχείου.</p>
               </div>
             </div>
 
@@ -231,8 +231,8 @@ const ServicesPage = () => {
                     4
                   </div>
                 </div>
-                <h3 className="mt-6 text-xl font-bold text-gray-900">We Deliver</h3>
-                <p className="mt-2 text-base text-gray-600">Fresh, crisp linens delivered ready for your next guest.</p>
+                <h3 className="mt-6 text-xl font-bold text-gray-900">Παραδίδουμε</h3>
+                <p className="mt-2 text-base text-gray-600">Φρέσκα, άψογα λευκά είδη παραδίδονται έτοιμα για τον επόμενο επισκέπτη σας.</p>
               </div>
             </div>
           </div>
@@ -243,18 +243,18 @@ const ServicesPage = () => {
       <section className="bg-white py-24 sm:py-32">
         <div className="container mx-auto px-6">
           <div className="mx-auto max-w-2xl text-center mb-16">
-             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">A Glimpse of Our Quality</h2>
-             <p className="mt-4 text-lg text-gray-600">See the pristine results we deliver every day.</p>
+             <h2 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">Μια Γεύση της Ποιότητάς μας</h2>
+             <p className="mt-4 text-lg text-gray-600">Δείτε τα άψογα αποτελέσματα που προσφέρουμε καθημερινά.</p>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <Image src="/1.jpg" alt="Crisply ironed shirts" width={600} height={800} className="object-cover w-full h-96 transform group-hover:scale-105 transition-transform duration-300" />
+              <Image src="/1.jpg" alt="Άψογα σιδερωμένα πουκάμισα" width={600} height={800} className="object-cover w-full h-96 transform group-hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <Image src="/2.png" alt="Folded towels" width={600} height={800} className="object-cover w-full h-96 transform group-hover:scale-105 transition-transform duration-300" />
+              <Image src="/2.png" alt="Διπλωμένες πετσέτες" width={600} height={800} className="object-cover w-full h-96 transform group-hover:scale-105 transition-transform duration-300" />
             </div>
             <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-              <Image src="/3.png" alt="Pristine bed linens" width={600} height={800} className="object-cover w-full h-96 transform group-hover:scale-105 transition-transform duration-300" />
+              <Image src="/3.png" alt="Πεντακάθαρα λευκά είδη κρεβατιού" width={600} height={800} className="object-cover w-full h-96 transform group-hover:scale-105 transition-transform duration-300" />
             </div>
           </div>
         </div>
@@ -263,24 +263,23 @@ const ServicesPage = () => {
       {/* 4. CTA Section */}
       <section className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 py-20">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl font-bold text-white sm:text-5xl">
-            Ready to Get Started?
-          </h2>
-          <p className="mt-6 text-xl text-white/90 max-w-2xl mx-auto">
-            Join hundreds of hosts who trust Ironone for spotless linens, every time.
+                      <h2 className="text-4xl font-bold text-white sm:text-5xl">
+                      Έτοιμοι να Ξεκινήσετε;
+                    </h2>            <p className="mt-6 text-xl text-white/90 max-w-2xl mx-auto">
+            Ελάτε σε εκατοντάδες οικοδεσπότες που εμπιστεύονται την Ironone για πεντακάθαρα λευκά είδη, κάθε φορά.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
               href="/booking"
               className="rounded-full bg-white px-8 py-4 text-lg font-semibold text-purple-600 shadow-xl hover:bg-gray-100 transition-all duration-300 hover:scale-105"
             >
-              Book Your First Pickup
+              Κλείστε την Πρώτη σας Παραλαβή
             </a>
             <a
               href="/contact"
               className="text-lg font-semibold text-white hover:text-white/80 transition-colors"
             >
-              Have questions? Contact us
+              Έχετε ερωτήσεις; Επικοινωνήστε μαζί μας
             </a>
           </div>
         </div>
