@@ -1,10 +1,24 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Calendar, Sparkles } from 'lucide-react';
+import { NavbarData } from '../../sanity/lib/queries';
+import { urlFor } from '../../sanity/lib/image';
+import Image from 'next/image';
+import { usePathname } from 'next/navigation';
 
-const Navbar: React.FC = () => {
+interface NavbarProps {
+  data?: NavbarData;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ data }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
+
+  // Hide navbar on studio pages
+  if (pathname?.startsWith('/studio')) {
+    return null;
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,12 +28,20 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
+  // Use Sanity data or fallback to defaults
+  const navLinks = data?.navigationLinks || [
     { name: "Αρχική", href: "/" },
     { name: "Σχετικά με μας", href: "/about" },
     { name: "Υπηρεσίες", href: "/services" },
     { name: "Επικοινωνία", href: "/contact" },
   ];
+
+  const logoText = data?.logo?.text || 'ironone';
+  const logoLink = data?.logo?.link || '/';
+  const ctaText = data?.ctaButton?.text || 'Book Now';
+  const ctaLink = data?.ctaButton?.link || '/booking';
+  const showLanguage = data?.languageSelector?.enabled !== false;
+  const defaultLang = data?.languageSelector?.defaultLanguage || 'EN';
 
   return (
     <header 
@@ -32,34 +54,31 @@ const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between py-4 px-6 lg:px-10">
           {/* Logo */}
-          <a 
-            href="/" 
+          <a
+            href={logoLink}
             className="flex items-center space-x-3 group"
           >
             <div className="relative w-10 h-10 flex-shrink-0">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg blur-sm opacity-50 group-hover:opacity-75 transition-opacity"></div>
-              <img 
-                src="/logo.png" 
-                alt="Ironone Logo" 
-                className="relative w-full h-full object-contain rounded-lg"
-onError={(e) => {
-  const target = e.currentTarget as HTMLImageElement;
-  target.style.display = 'none';
-  const nextSibling = e.currentTarget.nextElementSibling as HTMLElement | null;
-  if (nextSibling) {
-    nextSibling.style.display = 'flex';
-  }
-}}
-              />
-              <div className="relative hidden bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-lg w-full h-full items-center justify-center">
-                <Sparkles className="w-5 h-5 text-white" />
-              </div>
+              {data?.logo?.image ? (
+                <Image
+                  src={urlFor(data.logo.image).url()}
+                  alt="Logo"
+                  width={40}
+                  height={40}
+                  className="relative w-full h-full object-contain rounded-lg"
+                />
+              ) : (
+                <div className="relative bg-gradient-to-r from-blue-600 to-indigo-600 p-2 rounded-lg w-full h-full flex items-center justify-center">
+                  <Sparkles className="w-5 h-5 text-white" />
+                </div>
+              )}
             </div>
             <span className="text-2xl font-bold">
               <span className="bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
-                iron
+                {logoText.substring(0, 4)}
               </span>
-              <span className="text-slate-800">one</span>
+              <span className="text-slate-800">{logoText.substring(4)}</span>
             </span>
           </a>
 
@@ -80,19 +99,21 @@ onError={(e) => {
           {/* CTA Button - Desktop */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="/booking"
+              href={ctaLink}
               className="relative group overflow-hidden px-6 py-2.5 rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold shadow-md hover:shadow-xl transition-all duration-300"
             >
               <span className="relative z-10 flex items-center space-x-2">
                 <Calendar className="w-4 h-4" />
-                <span>Book Now</span>
+                <span>{ctaText}</span>
               </span>
               <div className="absolute inset-0 bg-gradient-to-r from-indigo-600 to-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             </a>
-            
-            <button className="px-4 py-2 text-sm font-medium text-slate-600 border-2 border-slate-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-200">
-              EN
-            </button>
+
+            {showLanguage && (
+              <button className="px-4 py-2 text-sm font-medium text-slate-600 border-2 border-slate-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-200">
+                {defaultLang}
+              </button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -130,17 +151,19 @@ onError={(e) => {
             
             <div className="mt-4 pt-4 border-t border-slate-200 space-y-3">
               <a
-                href="/booking"
+                href={ctaLink}
                 onClick={() => setMenuOpen(false)}
                 className="flex items-center justify-center space-x-2 w-full px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
               >
                 <Calendar className="w-4 h-4" />
-                <span>Book Now</span>
+                <span>{ctaText}</span>
               </a>
-              
-              <button className="w-full px-4 py-2 text-sm font-medium text-slate-600 border-2 border-slate-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-200">
-                EN
-              </button>
+
+              {showLanguage && (
+                <button className="w-full px-4 py-2 text-sm font-medium text-slate-600 border-2 border-slate-200 rounded-lg hover:border-blue-600 hover:text-blue-600 transition-all duration-200">
+                  {defaultLang}
+                </button>
+              )}
             </div>
           </div>
         </div>

@@ -8,6 +8,7 @@ import {structure} from './src/sanity/structure'
 export default defineConfig({
   name: 'default',
   title: 'IRONONE',
+  basePath: '/studio',
 
   projectId,
   dataset,

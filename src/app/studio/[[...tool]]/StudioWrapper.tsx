@@ -6,4 +6,3 @@ import config from '../../../../sanity.config'
 export default function StudioWrapper() {
   return <NextStudio config={config} />
 }
-

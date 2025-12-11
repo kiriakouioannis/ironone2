@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { getNavbar, getFooter, getSiteSettings } from "../sanity/lib/queries";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -15,23 +16,38 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "IRONONE",
-  description: "",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await getSiteSettings();
 
-export default function RootLayout({
+  return {
+    title: settings?.siteName || "IRONONE",
+    description: settings?.siteDescription || "",
+    keywords: settings?.seo?.keywords || [],
+    openGraph: {
+      title: settings?.seo?.metaTitle || settings?.siteName || "IRONONE",
+      description: settings?.seo?.metaDescription || settings?.siteDescription || "",
+    }
+  };
+}
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [navbarData, footerData] = await Promise.all([
+    getNavbar(),
+    getFooter()
+  ]);
+
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      > <Navbar />
+      >
+        <Navbar data={navbarData} />
         {children}
-        <Footer />
+        <Footer data={footerData} />
       </body>
     </html>
   );

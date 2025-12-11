@@ -261,7 +261,7 @@ export default function BookingCalendar() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900"
                     placeholder="John Doe"
                   />
                 </div>
@@ -276,7 +276,7 @@ export default function BookingCalendar() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900"
                     placeholder="john@example.gr"
                   />
                 </div>
@@ -291,7 +291,7 @@ export default function BookingCalendar() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900"
                     placeholder="+30 697 000 0000"
                   />
                 </div>
@@ -306,7 +306,7 @@ export default function BookingCalendar() {
                     name="address"
                     value={formData.address}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900"
                       placeholder="123 Main St, City, Χώρα"
                   />
                 </div>
@@ -319,7 +319,7 @@ export default function BookingCalendar() {
                     name="service"
                     value={formData.service}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900"
                   >
                     <option value="linen-wash">Πλύσιμο Λευκών</option>
                     <option value="ironing">Σιδερώματος Υπηρεσία</option>
@@ -341,11 +341,18 @@ export default function BookingCalendar() {
                   />
                 </div>
 
+                {submitError && (
+                  <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg">
+                    {submitError}
+                  </div>
+                )}
+
                 <button
                   onClick={handleSubmit}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 rounded-lg transition-colors"
+                  disabled={isSubmitting}
+                  className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white font-semibold py-4 rounded-lg transition-colors"
                 >
-                  Επιβεβαίωση Ραντεβού
+                  {isSubmitting ? 'Υποβολή...' : 'Επιβεβαίωση Ραντεβού'}
                 </button>
               </div>
             </div>
