@@ -41,7 +41,7 @@ const ContactPage = () => {
                 <Phone className="h-6 w-6 text-purple-600" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Καλέστε μας</h3>
-              <a href="tel:+15551234567" className="text-purple-600 hover:text-purple-700 transition-colors">
+              <a href="tel:211 8000717" className="text-purple-600 hover:text-purple-700 transition-colors">
                 +1 (555) 123-4567
               </a>
             </div>
@@ -53,7 +53,8 @@ const ContactPage = () => {
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Τοποθεσία</h3>
                               <p className="text-gray-600">
-                              Ευρύτερη Μητροπολιτική Περιοχή
+                              Αθήνα - Νομός Αττικής
+                                Υπόλοιπη Ελλάδα (κατόπιν επικοινωνίας)
                             </p>            </div>
 
             {/* Hours Card */}
@@ -63,8 +64,8 @@ const ContactPage = () => {
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Ώρες Λειτουργίας</h3>
               <p className="text-gray-600">
-                Δευ-Σαβ: 8πμ-8μμ<br />
-                Κυρ: 10πμ-6μμ
+                Δευ-Σαβ: 9πμ-6μμ<br />
+                Κυρ: -
               </p>
             </div>
           </div>
@@ -284,5 +285,6 @@ const ContactPage = () => {
     </>
   );
 };
+
 
 export default ContactPage;
