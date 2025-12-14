@@ -9,13 +9,13 @@ const ContactPage = () => {
         <div className="container relative mx-auto px-6 text-center">
           <div className="inline-flex items-center rounded-full bg-blue-100 px-4 py-2 mb-6">
             <MessageCircle className="h-4 w-4 text-blue-600 mr-2" />
-            <p className="text-sm font-semibold text-blue-700">Επικοινωνήστε</p>
+            <p className="text-sm font-semibold text-blue-700">Επικοινωνήστε μαζί μας</p>
           </div>
           <h1 className="mt-2 text-5xl font-bold tracking-tight text-gray-900 sm:text-7xl leading-tight">
-            Ας μιλήσουμε για τις ανάγκες σας σε πλύσιμο
+            Ας μιλήσουμε για τις ανάγκες του καταλύματός σας 
           </h1>
           <p className="mt-8 max-w-2xl mx-auto text-xl leading-8 text-gray-600">
-            Έχετε ερωτήσεις; Θέλετε μια προσαρμοσμένη προσφορά; Είμαστε εδώ για να σας βοηθήσουμε να αξιοποιήσετε στο έπακρο το Ironone.
+            Έχετε ερωτήσεις; Θέλετε μια προσαρμοσμένη προσφορά; Είμαστε εδώ για να σας βοηθήσουμε να αξιοποιήσετε στο έπακρο τις υπηρεσίες της IronOne.
           </p>
         </div>
       </section>
@@ -30,8 +30,8 @@ const ContactPage = () => {
                 <Mail className="h-6 w-6 text-blue-600" />
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Στείλτε μας email</h3>
-              <a href="mailto:hello@ironone.com" className="text-blue-600 hover:text-blue-700 transition-colors">
-                hello@ironone.com
+              <a href="mailto:hello@ironone.gr" className="text-blue-600 hover:text-blue-700 transition-colors">
+                hello@ironone.gr
               </a>
             </div>
 
@@ -82,7 +82,7 @@ const ContactPage = () => {
                 Στείλτε μας ένα μήνυμα
               </h2>
               <p className="text-lg text-gray-600 mb-8">
-                Συμπληρώστε την παρακάτω φόρμα και θα επικοινωνήσουμε μαζί σας εντός 24 ωρών.
+                Συμπληρώστε την παρακάτω φόρμα και θα επικοινωνήσουμε μαζί σας άμεσα.
               </p>
 
               <div className="space-y-6">
@@ -171,7 +171,7 @@ const ContactPage = () => {
             <div className="lg:pl-8">
               <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-3xl p-10 shadow-lg">
                 <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  Γιατί να επιλέξετε το Ironone;
+                  Γιατί να επιλέξετε την IronOne;
                 </h3>
                 
                 <div className="space-y-6">
@@ -183,7 +183,7 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="text-lg font-semibold text-gray-900 mb-1">Γρήγορη Παράδοση</h4>
-                      <p className="text-gray-600">Υπηρεσία 24-48 ωρών με διαθέσιμες επιλογές παραλαβής αυθημερόν.</p>
+                      <p className="text-gray-600">Υπηρεσία άμεσης παραλαβής - παράδοσης.</p>
                     </div>
                   </div>
 
@@ -194,8 +194,8 @@ const ContactPage = () => {
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Ποιότητα Ξενοδοχείου</h4>
-                      <p className="text-gray-600">Επαγγελματικά πρότυπα που οι καλεσμένοι σας θα παρατηρήσουν και θα εκτιμήσουν.</p>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Ποιότητα Υπηρεσιών σε πρότυπα Ξενοδοχείου</h4>
+                      <p className="text-gray-600">Επαγγελματικές υπηρεσίες που θα σας διαφοροποιήσουν από τον ανταγωνισμό.</p>
                     </div>
                   </div>
 
@@ -206,8 +206,8 @@ const ContactPage = () => {
                       </div>
                     </div>
                     <div>
-                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Αφιερωμένη Υποστήριξη</h4>
-                      <p className="text-gray-600">Η ομάδα μας είναι πάντα έτοιμη να σας βοηθήσει με τις συγκεκριμένες ανάγκες σας.</p>
+                      <h4 className="text-lg font-semibold text-gray-900 mb-1">Υποστήριξη</h4>
+                      <p className="text-gray-600">Η ομάδα μας είναι πάντα έτοιμη να σας βοηθήσει δίνοντας λύσεις στις ανάγκες σας.</p>
                     </div>
                   </div>
                 </div>
@@ -221,7 +221,7 @@ const ContactPage = () => {
                     className="inline-flex items-center gap-2 text-lg font-semibold text-blue-600 hover:text-blue-700 transition-colors"
                   >
                     <Phone className="h-5 w-5" />
-                    +1 (555) 123-4567
+                     211 8000717
                   </a>
                 </div>
               </div>
@@ -232,7 +232,7 @@ const ContactPage = () => {
                   Έχετε μια γρήγορη ερώτηση;
                 </h3>
                 <p className="text-gray-600 mb-6">
-                  Δείτε τις συχνές ερωτήσεις μας για να λάβετε άμεσες απαντήσεις.
+                  Δείτε τις συχνές ερωτήσεις μας για να λάβετε γρήγορα τις απαντήσεις.
                 </p>
                 <a
                   href="/services#faq"
@@ -266,10 +266,10 @@ const ContactPage = () => {
       <section className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 py-20">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white sm:text-5xl">
-            Έτοιμοι να ζήσετε την εμπειρία του Ironone;
+            Έτοιμοι να ζήσετε την εμπειρία της IronΟne;
           </h2>
           <p className="mt-6 text-xl text-white/90 max-w-2xl mx-auto">
-            Κλείστε την πρώτη σας παραλαβή σήμερα και ανακαλύψτε γιατί οι οικοδεσπότες λατρεύουν την υπηρεσία μας.
+            Κλείστε την πρώτη σας παραλαβή σήμερα και ανακαλύψτε γιατί οι οικοδεσπότες λατρεύουν τις υπηρεσίες μας.
           </p>
           <div className="mt-10">
             <a
@@ -288,3 +288,4 @@ const ContactPage = () => {
 
 
 export default ContactPage;
+
