@@ -66,7 +66,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
                 {data?.branding?.logoText || 'ironone'}
               </a>
               <p className="mt-6 text-gray-600 text-base leading-relaxed max-w-sm">
-                {data?.branding?.description || 'Η κορυφαία υπηρεσία πλυσίματος και σιδερώματος βραχυχρόνιας μίσθωσης.'}
+                {data?.branding?.description || 'Η κορυφαία υπηρεσία για πλύσιμο & σιδέρωμα καταλυμάτων βραχυχρόνιας μίσθωσης - ξενοδοχείων.'}
               </p>
               <div className="mt-8 flex gap-4">
                 {data?.socialMedia?.instagram && (
@@ -124,7 +124,7 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
           <div className="mt-16 border-t border-gray-200 pt-8">
             <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-gray-600">
               <p>
-                {data?.copyrightText || `© ${currentYear} Ironone. ΟΛΑ ΤΑ ΔΙΚΑΙΩΜΑΤΑ ΔΙΕΘΕΤΟΝΤΑΙ.`}
+                {data?.copyrightText || `© ${currentYear} IronOne. Copyright 2026.`}
               </p>
               <div className="flex items-center gap-6">
                 {data?.legalLinks?.map((link, index) => (
@@ -142,4 +142,5 @@ const Footer: React.FC<FooterProps> = ({ data }) => {
 };
 
 export default Footer;
+
 
