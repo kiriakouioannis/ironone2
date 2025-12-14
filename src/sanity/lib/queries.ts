@@ -25,49 +25,179 @@ export type HeroSectionData = {
   trustBrands?: string[];
 };
 
-// ============= Services Section Types =============
-export type Service = {
+// ============= Services Page Types =============
+type Plan = {
+  popular?: boolean;
+  title: string;
+  description: string;
+  price: string;
+  priceUnit: string;
+  features: string[];
+  buttonText: string;
+  buttonLink: string;
+};
+
+type HowItWorksStep = {
+  stepNumber: number;
+  title: string;
+  description: string;
+};
+
+type GalleryImage = {
+  alt: string;
+  asset: any;
+};
+
+export type ServicesPageData = {
+  heroSection?: {
+    badge?: string;
+    heading?: string;
+    subheading?: string;
+    features?: string[];
+  };
+  pricingSection?: {
+    title?: string;
+    subtitle?: string;
+    plans?: Plan[];
+  };
+  howItWorksSection?: {
+    title?: string;
+    subtitle?: string;
+    steps?: HowItWorksStep[];
+  };
+  gallerySection?: {
+    title?: string;
+    subtitle?: string;
+    images?: GalleryImage[];
+  };
+  ctaSection?: {
+    title?: string;
+    subtitle?: string;
+    primaryButtonText?: string;
+    primaryButtonLink?: string;
+    secondaryButtonText?: string;
+    secondaryButtonLink?: string;
+  };
+};
+
+// ============= About Page Types =============
+type Value = {
   title: string;
   description: string;
   icon: string;
 };
 
-export type WhyHostsColumn = {
+type Stat = {
+  value: string;
+  label: string;
   icon: string;
+};
+
+export type AboutPageData = {
+  heroSection?: {
+    badge?: string;
+    heading?: string;
+    subheading?: string;
+  };
+  storySection?: {
+    badge?: string;
+    title?: string;
+    paragraph1?: string;
+    paragraph2?: string;
+    image?: any;
+    stat1?: {
+      value?: string;
+      label?: string;
+    };
+    stat2?: {
+      value?: string;
+      label?: string;
+    };
+  };
+  missionSection?: {
+    badge?: string;
+    title?: string;
+    subtitle?: string;
+    values?: Value[];
+  };
+  statsSection?: {
+    title?: string;
+    subtitle?: string;
+    stats?: Stat[];
+  };
+  ctaSection?: {
+    title?: string;
+    subtitle?: string;
+    primaryButtonText?: string;
+    primaryButtonLink?: string;
+    secondaryButtonText?: string;
+    secondaryButtonLink?: string;
+  };
+};
+
+// ============= Contact Page Types =============
+type ContactInfo = {
   title: string;
-  description?: string;
-  features?: string[];
+  text: string;
+  link?: string;
+  icon: string;
 };
 
-export type GalleryImage = {
-  image: any;
-  caption: string;
-  fallbackUrl?: string;
+type Reason = {
+  title: string;
+  description: string;
+  icon: string;
 };
 
-export type ServicesSectionData = {
-  header: {
-    badgeText: string;
-    title: string;
-    subtitle: string;
+export type ContactPageData = {
+  heroSection?: {
+    badge?: string;
+    heading?: string;
+    subheading?: string;
   };
-  services: Service[];
-  whyHostsLove: {
-    title: string;
-    columns: WhyHostsColumn[];
+  contactInfo?: ContactInfo[];
+  formSection?: {
+    title?: string;
+    subtitle?: string;
+    nameLabel?: string;
+    namePlaceholder?: string;
+    emailLabel?: string;
+    emailPlaceholder?: string;
+    phoneLabel?: string;
+    phonePlaceholder?: string;
+    subjectLabel?: string;
+    subjectPlaceholder?: string;
+    messageLabel?: string;
+    messagePlaceholder?: string;
+    buttonText?: string;
+    submittingText?: string;
+    successMessage?: string;
+    errorMessage?: string;
   };
-  gallery: {
-    title: string;
-    subtitle: string;
-    images: GalleryImage[];
+  whyChooseUs?: {
+    title?: string;
+    reasons?: Reason[];
+    emergencyTitle?: string;
+    emergencyPhone?: string;
   };
-  ctaSection: {
-    title: string;
-    description: string;
-    buttonText: string;
-    buttonLink: string;
+  faqPrompt?: {
+    title?: string;
+    subtitle?: string;
+    buttonText?: string;
+    buttonLink?: string;
+  };
+  mapSection?: {
+    title?: string;
+    subtitle?: string;
+  };
+  ctaSection?: {
+    title?: string;
+    subtitle?: string;
+    buttonText?: string;
+    buttonLink?: string;
   };
 };
+
 
 // ============= Navbar Types =============
 export type NavLink = {
@@ -153,6 +283,56 @@ export type SiteSettingsData = {
   };
 };
 
+// ============= Booking Page Types =============
+export type ServiceType = {
+  title: string;
+  value: string;
+};
+
+export type BookingPageData = {
+  title?: string;
+  subtitle?: string;
+  calendarStep?: {
+    title?: string;
+    monthNames?: string[];
+    dayNames?: string[];
+  };
+  timeStep?: {
+    title?: string;
+    backButtonText?: string;
+    availableHours?: string[];
+  };
+  formStep?: {
+    title?: string;
+    backButtonText?: string;
+    nameLabel?: string;
+    namePlaceholder?: string;
+    emailLabel?: string;
+    emailPlaceholder?: string;
+    phoneLabel?: string;
+    phonePlaceholder?: string;
+    addressLabel?: string;
+    addressPlaceholder?: string;
+    serviceTypeLabel?: string;
+    serviceTypes?: ServiceType[];
+    notesLabel?: string;
+    notesPlaceholder?: string;
+    submitButtonText?: string;
+    submittingButtonText?: string;
+    errorMessage?: string;
+  };
+  confirmationStep?: {
+    title?: string;
+    message?: string;
+    detailsTitle?: string;
+    dateLabel?: string;
+    timeLabel?: string;
+    serviceLabel?: string;
+    addressLabel?: string;
+    newAppointmentButtonText?: string;
+  };
+};
+
 // ============= GROQ Queries =============
 
 export async function getHeroSection() {
@@ -172,24 +352,31 @@ export async function getHeroSection() {
   return await sanityFetch<HeroSectionData>({ query });
 }
 
-export async function getServicesSection() {
-  const query = `*[_type == "servicesSection"][0]{
-    header,
-    services,
-    whyHostsLove,
-    gallery{
-      title,
-      subtitle,
-      images[]{
-        image,
-        caption,
-        fallbackUrl
-      }
-    },
+export async function getServicesPage() {
+  const query = `*[_type == "servicesPage"][0]{
+    heroSection,
+    pricingSection,
+    howItWorksSection,
+    gallerySection,
     ctaSection
   }`;
+  return await sanityFetch<ServicesPageData>({query});
+}
 
-  return await sanityFetch<ServicesSectionData>({ query });
+export async function getAboutPage() {
+  const query = `*[_type == "aboutPage"][0]{
+    heroSection,
+    storySection,
+    missionSection,
+    statsSection,
+    ctaSection
+  }`;
+  return await sanityFetch<AboutPageData>({query});
+}
+
+export async function getContactPage() {
+  const query = `*[_type == "contactPage"][0]`;
+  return await sanityFetch<ContactPageData>({query});
 }
 
 export async function getNavbar() {
@@ -228,4 +415,17 @@ export async function getSiteSettings() {
   }`;
 
   return await sanityFetch<SiteSettingsData>({ query });
+}
+
+export async function getBookingPage() {
+  const query = `*[_type == "bookingPage"][0]{
+    title,
+    subtitle,
+    calendarStep,
+    timeStep,
+    formStep,
+    confirmationStep
+  }`;
+
+  return await sanityFetch<BookingPageData>({ query });
 }

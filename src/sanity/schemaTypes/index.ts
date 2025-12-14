@@ -1,19 +1,25 @@
 import heroSection from './heroSection'
-import servicesSection from './servicesSection'
 import navbar from './navbar'
 import footer from './footer'
 import siteSettings from './siteSettings'
-import booking from './booking'
+import bookingform from './bookingform'
+import bookingPage from './booking'
+import servicesPage from './servicesPage'
+import aboutPage from './aboutPage'
+import contactPage from './contactPage'
 
 export const schemaTypes = [
   heroSection,
-  servicesSection,
   navbar,
   footer,
   siteSettings,
-  booking
+  bookingform,
+  bookingPage,
+  servicesPage,
+  aboutPage,
+  contactPage,
 ]
 
 export const schema = {
-  types: schemaTypes
+  types: schemaTypes,
 }
