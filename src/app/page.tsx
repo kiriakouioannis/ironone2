@@ -1,11 +1,11 @@
 import HeroSection from "./components/Hero";
-import ServicesSection from "./components/Services";
+import Services from "./components/Services";
 
 export default function Home() {
   return (
   <div>
     <HeroSection />
-    <ServicesSection />
+    <Services />
   </div>
    
   );
