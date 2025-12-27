@@ -2,6 +2,7 @@ import { revalidateTag } from 'next/cache'
 import { type NextRequest, NextResponse } from 'next/server'
 import { parseBody } from 'next-sanity/webhook'
 
+// Sanity webhook endpoint for cache revalidation
 // Get the secret from environment variables
 const secret = process.env.SANITY_REVALIDATE_SECRET;
 
