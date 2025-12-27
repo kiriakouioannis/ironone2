@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import { getNavbar, getFooter, getSiteSettings } from "../sanity/lib/queries";
+import { getNavbarData, getFooter, getSiteSettings } from "../sanity/lib/queries";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -36,7 +36,7 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   const [navbarData, footerData] = await Promise.all([
-    getNavbar(),
+    getNavbarData(),
     getFooter()
   ]);
 

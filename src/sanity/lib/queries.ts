@@ -349,7 +349,7 @@ export async function getHeroSection() {
     trustBrands
   }`;
 
-  return await sanityFetch<HeroSectionData>({ query });
+  return await sanityFetch<HeroSectionData>({ query, tags: ['heroSection'] });
 }
 
 export async function getServicesPage() {
@@ -360,7 +360,7 @@ export async function getServicesPage() {
     gallerySection,
     ctaSection
   }`;
-  return await sanityFetch<ServicesPageData>({query});
+  return await sanityFetch<ServicesPageData>({query, tags: ['servicesPage']});
 }
 
 export async function getAboutPage() {
@@ -371,15 +371,15 @@ export async function getAboutPage() {
     statsSection,
     ctaSection
   }`;
-  return await sanityFetch<AboutPageData>({query});
+  return await sanityFetch<AboutPageData>({query, tags: ['aboutPage']});
 }
 
 export async function getContactPage() {
   const query = `*[_type == "contactPage"][0]`;
-  return await sanityFetch<ContactPageData>({query});
+  return await sanityFetch<ContactPageData>({query, tags: ['contactPage']});
 }
 
-export async function getNavbar() {
+export async function getNavbarData() {
   const query = `*[_type == "navbar"][0]{
     logo,
     navigationLinks,
@@ -387,7 +387,7 @@ export async function getNavbar() {
     languageSelector
   }`;
 
-  return await sanityFetch<NavbarData>({ query });
+  return await sanityFetch<NavbarData>({ query, tags: ['navbar'] });
 }
 
 export async function getFooter() {
@@ -400,7 +400,7 @@ export async function getFooter() {
     copyrightText
   }`;
 
-  return await sanityFetch<FooterData>({ query });
+  return await sanityFetch<FooterData>({ query, tags: ['footer'] });
 }
 
 export async function getSiteSettings() {
@@ -414,7 +414,7 @@ export async function getSiteSettings() {
     seo
   }`;
 
-  return await sanityFetch<SiteSettingsData>({ query });
+  return await sanityFetch<SiteSettingsData>({ query, tags: ['siteSettings'] });
 }
 
 export async function getBookingPage() {
@@ -427,5 +427,5 @@ export async function getBookingPage() {
     confirmationStep
   }`;
 
-  return await sanityFetch<BookingPageData>({ query });
+  return await sanityFetch<BookingPageData>({ query, tags: ['bookingPage'] });
 }

@@ -8,17 +8,29 @@ export default function BookingClientPage({ data }: { data: BookingPageData }) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [bookingStep, setBookingStep] = useState(1);
+
+  // Fallback service types if not defined in Sanity
+  const defaultServiceTypes = [
+    { title: 'Linen Wash', value: 'linen-wash' },
+    { title: 'Ironing Service', value: 'ironing' },
+    { title: 'Wash & Ironing', value: 'both' }
+  ];
+
+  const serviceTypes = data?.formStep?.serviceTypes && data.formStep.serviceTypes.length > 0
+    ? data.formStep.serviceTypes
+    : defaultServiceTypes;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     address: '',
-    service: data?.formStep?.serviceTypes?.[0]?.value || 'linen-wash',
+    service: serviceTypes[0]?.value || 'linen-wash',
     notes: ''
   });
 
   const availableHours = data?.timeStep?.availableHours || [
-    '09:00', '10:00', '11:00', '12:00', 
+    '09:00', '10:00', '11:00', '12:00',
     '13:00', '14:00', '15:00', '16:00', '17:00'
   ];
 
@@ -322,7 +334,7 @@ export default function BookingClientPage({ data }: { data: BookingPageData }) {
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent text-slate-900"
                   >
-                    {data?.formStep?.serviceTypes?.map(service => (
+                    {serviceTypes.map(service => (
                       <option key={service.value} value={service.value}>{service.title}</option>
                     ))}
                   </select>
@@ -381,7 +393,7 @@ export default function BookingClientPage({ data }: { data: BookingPageData }) {
                   setSelectedDate(null);
                   setSelectedTime(null);
                   setFormData({
-                    name: '', email: '', phone: '', address: '', service: data?.formStep?.serviceTypes?.[0]?.value || 'linen-wash', notes: ''
+                    name: '', email: '', phone: '', address: '', service: serviceTypes[0]?.value || 'linen-wash', notes: ''
                   });
                 }}
                 className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-lg transition-colors"
