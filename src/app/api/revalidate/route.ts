@@ -22,7 +22,8 @@ export async function POST(req: NextRequest) {
       return new Response(JSON.stringify({ message, body }), { status: 400 });
     }
 
-    revalidateTag(body._type)
+    // Revalidate the tag - Next.js 16 requires 2 arguments: tag and profile
+    revalidateTag(body._type, 'max')
 
     return NextResponse.json({
       status: 200,
