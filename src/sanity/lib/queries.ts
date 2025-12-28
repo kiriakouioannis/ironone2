@@ -349,7 +349,7 @@ export async function getHeroSection() {
     trustBrands
   }`;
 
-  return await sanityFetch<HeroSectionData>({ query, tags: ['heroSection'] });
+  return await sanityFetch<HeroSectionData>({ query, revalidate: 60 });
 }
 
 export async function getServicesPage() {
@@ -360,7 +360,7 @@ export async function getServicesPage() {
     gallerySection,
     ctaSection
   }`;
-  return await sanityFetch<ServicesPageData>({query, tags: ['servicesPage']});
+  return await sanityFetch<ServicesPageData>({query, revalidate: 60});
 }
 
 export async function getAboutPage() {
@@ -371,12 +371,12 @@ export async function getAboutPage() {
     statsSection,
     ctaSection
   }`;
-  return await sanityFetch<AboutPageData>({query, tags: ['aboutPage']});
+  return await sanityFetch<AboutPageData>({query, revalidate: 60});
 }
 
 export async function getContactPage() {
   const query = `*[_type == "contactPage"][0]`;
-  return await sanityFetch<ContactPageData>({query, tags: ['contactPage']});
+  return await sanityFetch<ContactPageData>({query, revalidate: 60});
 }
 
 export async function getNavbarData() {
@@ -387,7 +387,7 @@ export async function getNavbarData() {
     languageSelector
   }`;
 
-  return await sanityFetch<NavbarData>({ query, tags: ['navbar'] });
+  return await sanityFetch<NavbarData>({ query, revalidate: 60 });
 }
 
 export async function getFooter() {
@@ -400,7 +400,7 @@ export async function getFooter() {
     copyrightText
   }`;
 
-  return await sanityFetch<FooterData>({ query, tags: ['footer'] });
+  return await sanityFetch<FooterData>({ query, revalidate: 60 });
 }
 
 export async function getSiteSettings() {
@@ -414,7 +414,7 @@ export async function getSiteSettings() {
     seo
   }`;
 
-  return await sanityFetch<SiteSettingsData>({ query, tags: ['siteSettings'] });
+  return await sanityFetch<SiteSettingsData>({ query, revalidate: 60 });
 }
 
 export async function getBookingPage() {
@@ -427,5 +427,5 @@ export async function getBookingPage() {
     confirmationStep
   }`;
 
-  return await sanityFetch<BookingPageData>({ query, tags: ['bookingPage'] });
+  return await sanityFetch<BookingPageData>({ query, revalidate: 60 });
 }

@@ -1,18 +1,19 @@
-// Server-side fetch function that doesn't use defineLive to avoid createContext issues
+// Server-side fetch function with automatic time-based revalidation
+// Content will refresh every 60 seconds automatically - no webhooks needed!
 import { client } from './client'
 
 export async function sanityFetch<T>({
   query,
   params = {},
-  tags = [],
+  revalidate = 60, // Revalidate every 60 seconds by default
 }: {
   query: string;
   params?: Record<string, unknown>;
-  tags?: string[];
+  revalidate?: number; // Time in seconds
 }): Promise<T> {
   return await client.fetch<T>(query, params, {
     next: {
-      tags,
+      revalidate, // Next.js will automatically refresh data after this many seconds
     }
   });
 }
