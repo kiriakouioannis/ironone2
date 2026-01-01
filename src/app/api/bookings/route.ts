@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { writeClient } from '@/sanity/lib/writeClient'
+import { client } from '@/sanity/lib/client'
 
 export async function POST(request: NextRequest) {
   try {
@@ -9,6 +10,20 @@ export async function POST(request: NextRequest) {
     if (!name || !email || !phone || !address || !service || !date || !time) {
       return NextResponse.json(
         { error: 'Missing required fields' },
+        { status: 400 }
+      )
+    }
+
+    // Check if the selected date is blocked
+    const selectedDate = new Date(date).toISOString().split('T')[0]
+    const availability = await client.fetch(
+      `*[_type == "availability" && date == $date][0]`,
+      { date: selectedDate }
+    )
+
+    if (availability && availability.isBlocked) {
+      return NextResponse.json(
+        { error: 'This date is not available for booking. Please select another date.' },
         { status: 400 }
       )
     }

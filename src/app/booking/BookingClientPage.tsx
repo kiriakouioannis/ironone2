@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight, Calendar, Clock, User, Mail, Phone, Home, Check } from 'lucide-react';
 import { BookingPageData } from '@/sanity/lib/queries';
 
@@ -8,6 +8,22 @@ export default function BookingClientPage({ data }: { data: BookingPageData }) {
   const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   const [selectedTime, setSelectedTime] = useState<string | null>(null);
   const [bookingStep, setBookingStep] = useState(1);
+  const [blockedDates, setBlockedDates] = useState<string[]>([]);
+
+  // Fetch blocked dates from API
+  useEffect(() => {
+    const fetchBlockedDates = async () => {
+      try {
+        const response = await fetch('/api/availability');
+        const data = await response.json();
+        setBlockedDates(data.blockedDates || []);
+      } catch (error) {
+        console.error('Error fetching blocked dates:', error);
+      }
+    };
+
+    fetchBlockedDates();
+  }, []);
 
   // Fallback service types if not defined in Sanity
   const defaultServiceTypes = [
@@ -41,7 +57,7 @@ export default function BookingClientPage({ data }: { data: BookingPageData }) {
     const lastDay = new Date(year, month + 1, 0);
     const daysInMonth = lastDay.getDate();
     const startingDayOfWeek = firstDay.getDay();
-    
+
     return { daysInMonth, startingDayOfWeek };
   };
 
@@ -55,12 +71,19 @@ export default function BookingClientPage({ data }: { data: BookingPageData }) {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() + 1));
   };
 
+  const isDateBlocked = (day: number) => {
+    const checkDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
+    const dateString = checkDate.toISOString().split('T')[0];
+    return blockedDates.includes(dateString);
+  };
+
   const selectDate = (day: number) => {
     const selected = new Date(currentDate.getFullYear(), currentDate.getMonth(), day);
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-    
-    if (selected >= today) {
+
+    // Check if date is not in the past and not blocked
+    if (selected >= today && !isDateBlocked(day)) {
       setSelectedDate(selected);
       setBookingStep(2);
     }
@@ -125,8 +148,8 @@ export default function BookingClientPage({ data }: { data: BookingPageData }) {
 
   const isToday = (day: number) => {
     const today = new Date();
-    return today.getDate() === day && 
-           today.getMonth() === currentDate.getMonth() && 
+    return today.getDate() === day &&
+           today.getMonth() === currentDate.getMonth() &&
            today.getFullYear() === currentDate.getFullYear();
   };
 
@@ -135,6 +158,10 @@ export default function BookingClientPage({ data }: { data: BookingPageData }) {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
     return checkDate < today;
+  };
+
+  const isUnavailable = (day: number) => {
+    return isPastDate(day) || isDateBlocked(day);
   };
 
   return (
@@ -149,8 +176,8 @@ export default function BookingClientPage({ data }: { data: BookingPageData }) {
           {[1, 2, 3].map((step) => (
             <div key={step} className="flex items-center">
               <div className={`w-10 h-10 rounded-full flex items-center justify-center font-semibold transition-all ${
-                bookingStep >= step 
-                  ? 'bg-blue-600 text-white' 
+                bookingStep >= step
+                  ? 'bg-blue-600 text-white'
                   : 'bg-white text-slate-400 border-2 border-slate-200'
               }`}>
                 {bookingStep > step ? <Check className="w-5 h-5" /> : step}
@@ -199,10 +226,10 @@ export default function BookingClientPage({ data }: { data: BookingPageData }) {
                   <button
                     key={day}
                     onClick={() => selectDate(day)}
-                    disabled={isPastDate(day)}
+                    disabled={isUnavailable(day)}
                     className={`aspect-square rounded-lg font-medium transition-all ${
-                      isPastDate(day)
-                        ? 'text-slate-300 cursor-not-allowed'
+                      isUnavailable(day)
+                        ? 'text-slate-300 cursor-not-allowed bg-slate-50'
                         : isToday(day)
                         ? 'bg-blue-100 text-blue-600 hover:bg-blue-200'
                         : 'hover:bg-blue-50 text-slate-700 border border-slate-200 hover:border-blue-300'
@@ -223,7 +250,7 @@ export default function BookingClientPage({ data }: { data: BookingPageData }) {
               >
                 <ChevronLeft className="w-4 h-4" /> {data?.timeStep?.backButtonText || 'Back to Calendar'}
               </button>
-              
+
               <div className="mb-6">
                 <div className="flex items-center text-slate-600 mb-2">
                   <Calendar className="w-5 h-5 mr-2" />

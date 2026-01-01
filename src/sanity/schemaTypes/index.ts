@@ -7,6 +7,7 @@ import bookingPage from './booking'
 import servicesPage from './servicesPage'
 import aboutPage from './aboutPage'
 import contactPage from './contactPage'
+import { availabilityType } from './availability'
 
 export const schemaTypes = [
   heroSection,
@@ -18,6 +19,7 @@ export const schemaTypes = [
   servicesPage,
   aboutPage,
   contactPage,
+  availabilityType,
 ]
 
 export const schema = {
