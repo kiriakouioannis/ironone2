@@ -43,8 +43,8 @@ export const appointmentSlotsType = defineType({
               placeholder: '09:00',
               description: 'Format: HH:MM',
               validation: (rule) =>
-                rule.required().custom((value) => {
-                  if (!/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(value || '')) {
+                rule.required().custom((value: string | undefined) => {
+                  if (!value || !/^([0-1]?[0-9]|2[0-3]):[0-5][0-9]$/.test(value)) {
                     return 'Time must be in HH:MM format (e.g., 09:00)'
                   }
                   return true
