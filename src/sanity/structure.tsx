@@ -85,7 +85,7 @@ export const structure: StructureResolver = (S, context) =>
               S.listItem()
                 .title("📋 All Bookings")
                 .icon(() => "📋")
-                .child(S.documentTypeList("bookingform").title("All Bookings")),
+                .child(S.documentTypeList("booking").title("All Bookings")),
 
               S.divider(),
 
