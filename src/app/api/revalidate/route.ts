@@ -2,8 +2,6 @@ import { revalidateTag } from 'next/cache'
 import { type NextRequest, NextResponse } from 'next/server'
 import { parseBody } from 'next-sanity/webhook'
 
-// Sanity webhook endpoint for cache revalidation
-// Get the secret from environment variables
 const secret = process.env.SANITY_REVALIDATE_SECRET;
 
 export async function POST(req: NextRequest) {
@@ -16,13 +14,12 @@ export async function POST(req: NextRequest) {
       const message = 'Invalid signature'
       return new Response(JSON.stringify({ message, isValidSignature, body }), { status: 401 })
     }
-
     if (!body?._type) {
       const message = 'Invalid _type'
       return new Response(JSON.stringify({ message, body }), { status: 400 });
     }
 
-    // Revalidate the tag - Next.js 16 requires 2 arguments: tag and profile
+    // Next.js 16 mein revalidateTag(tag, 'max') chahiye
     revalidateTag(body._type, 'max')
 
     return NextResponse.json({
