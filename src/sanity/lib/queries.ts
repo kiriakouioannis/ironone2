@@ -198,7 +198,6 @@ export type ContactPageData = {
   };
 };
 
-
 // ============= Navbar Types =============
 export type NavLink = {
   name: string;
@@ -348,8 +347,10 @@ export async function getHeroSection() {
     statsCard,
     trustBrands
   }`;
-
-  return await sanityFetch<HeroSectionData>({ query, revalidate: 60 });
+  return await sanityFetch<HeroSectionData>({
+    query,
+    tags: ['heroSection'],
+  });
 }
 
 export async function getServicesPage() {
@@ -360,7 +361,10 @@ export async function getServicesPage() {
     gallerySection,
     ctaSection
   }`;
-  return await sanityFetch<ServicesPageData>({query, revalidate: 60});
+  return await sanityFetch<ServicesPageData>({
+    query,
+    tags: ['servicesPage'],
+  });
 }
 
 export async function getAboutPage() {
@@ -371,12 +375,18 @@ export async function getAboutPage() {
     statsSection,
     ctaSection
   }`;
-  return await sanityFetch<AboutPageData>({query, revalidate: 60});
+  return await sanityFetch<AboutPageData>({
+    query,
+    tags: ['aboutPage'],
+  });
 }
 
 export async function getContactPage() {
   const query = `*[_type == "contactPage"][0]`;
-  return await sanityFetch<ContactPageData>({query, revalidate: 60});
+  return await sanityFetch<ContactPageData>({
+    query,
+    tags: ['contactPage'],
+  });
 }
 
 export async function getNavbarData() {
@@ -386,8 +396,10 @@ export async function getNavbarData() {
     ctaButton,
     languageSelector
   }`;
-
-  return await sanityFetch<NavbarData>({ query, revalidate: 60 });
+  return await sanityFetch<NavbarData>({
+    query,
+    tags: ['navbar'],
+  });
 }
 
 export async function getFooter() {
@@ -399,8 +411,10 @@ export async function getFooter() {
     legalLinks,
     copyrightText
   }`;
-
-  return await sanityFetch<FooterData>({ query, revalidate: 60 });
+  return await sanityFetch<FooterData>({
+    query,
+    tags: ['footer'],
+  });
 }
 
 export async function getSiteSettings() {
@@ -413,8 +427,10 @@ export async function getSiteSettings() {
     socialMedia,
     seo
   }`;
-
-  return await sanityFetch<SiteSettingsData>({ query, revalidate: 60 });
+  return await sanityFetch<SiteSettingsData>({
+    query,
+    tags: ['siteSettings'],
+  });
 }
 
 export async function getBookingPage() {
@@ -426,6 +442,8 @@ export async function getBookingPage() {
     formStep,
     confirmationStep
   }`;
-
-  return await sanityFetch<BookingPageData>({ query, revalidate: 60 });
+  return await sanityFetch<BookingPageData>({
+    query,
+    tags: ['bookingPage'],
+  });
 }
