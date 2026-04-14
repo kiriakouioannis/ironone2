@@ -6,7 +6,7 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true, // Use CDN for faster loads
+  useCdn: false, // Disable CDN for live updates in production
   token: process.env.SANITY_API_TOKEN, // Required for authenticated requests
   perspective: 'published', // Only fetch published content
 })
