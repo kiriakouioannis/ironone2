@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { getNavbarData, getFooter, getSiteSettings } from "../sanity/lib/queries";
+import SanityLiveClient from "@/sanity/lib/SanityLiveClient";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -45,6 +46,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <SanityLiveClient />
         <Navbar data={navbarData} />
         {children}
         <Footer data={footerData} />
